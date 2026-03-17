@@ -26,7 +26,7 @@ logger = logging.getLogger('ND2.search')
 
 class EpidemicRewardSolver(RewardSolver):
     def solve(self, prefix, *args, **kwargs):
-        if prefix.count('aggr') != 1: return 0.0, {}
+        if prefix.count('aggr') != 1: return 0.0, None
         reward, coef_dict = super().solve(prefix, *args, **kwargs)
         return reward, coef_dict
 
