@@ -26,7 +26,7 @@ logger = logging.getLogger('ND2.search')
 class BacteriaRewardSolver(RewardSolver):
     first_time_log = True
     def solve(self, prefix, *args, **kwargs):
-        if prefix.count('aggr') > 1: return 0.0, {}
+        if prefix.count('aggr') > 1: return 0.0, None
         if prefix.count('aggr') == 1: 
             idx = prefix.index('aggr')
             prefix = prefix[:idx+1] + ['mul', '<Ce>'] + prefix[idx+1:]
